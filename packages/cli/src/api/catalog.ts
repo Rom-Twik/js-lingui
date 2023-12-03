@@ -204,10 +204,8 @@ export class Catalog {
     let ext: string
     if (namespace === "es") {
       ext = "mjs"
-    } else if (namespace === "ts") {
-      ext = "ts"
     } else {
-      ext = "js"
+      ext = namespace || "js"
     }
 
     const filename = `${replacePlaceholders(this.path, { locale })}.${ext}`
